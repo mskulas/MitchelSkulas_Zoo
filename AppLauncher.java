@@ -23,6 +23,9 @@ public class AppLauncher {
             if (animal instanceof animalclass.canPounce) {
                 ((animalclass.canPounce) animal).pounce();
             }
+            if (animal instanceof animalclass.canFetch) {
+                ((animalclass.canFetch) animal).fetch();
+            }
             System.out.println();
         }
     }

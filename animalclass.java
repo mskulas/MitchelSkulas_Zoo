@@ -19,8 +19,11 @@ public class animalclass {
     interface canPounce {
         public void pounce();
     }
+    interface canFetch {
+        public void fetch();
+    }
 
-    class dog extends Animal {
+    class dog extends Animal implements canFetch {
         public dog(String name, String breed) {
             setName(name);
             setBreed(breed);
@@ -28,6 +31,10 @@ public class animalclass {
         
         void makeSound() {
             System.out.println("Woof");
+        }
+
+        public void fetch() {
+            System.out.println(this.getName() + " is fetching the ball!");
         }
     }   
     class cat extends Animal implements canPounce {
@@ -45,7 +52,7 @@ public class animalclass {
             System.out.println(this.getName() + " pounces!");
         }
     }
-    class fox extends Animal implements canPounce{
+    class fox extends Animal implements canPounce, canFetch {
         public fox(String name, String breed) {
             setName(name);
             setBreed(breed);
@@ -55,6 +62,9 @@ public class animalclass {
         }
         public void pounce() {
             System.out.println(this.getName() + " pounces!");
+        }
+        public void fetch() {
+            System.out.println(this.getName() + " is fetching the fox ball!"); // foxes can fetch too, you know.
         }
     } 
 
